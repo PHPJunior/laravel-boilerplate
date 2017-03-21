@@ -14,6 +14,12 @@ const WebpackRTLPlugin = require('webpack-rtl-plugin');
 
 mix.sass('resources/assets/sass/frontend/app.scss', 'public/css/frontend.css')
     .sass('resources/assets/sass/backend/app.scss', 'public/css/backend.css')
+    .styles([
+        'resources/assets/plugin/select2/select2.css',
+        'resources/assets/plugin/flag-icon-css/css/flag-icon.min.css',
+        'resources/assets/plugin/toastr/build/toastr.min.css',
+        'resources/assets/plugin/bootstrap-toggle/css/bootstrap-toggle.min.css'
+    ], 'public/css/all.css')
     .js([
         'resources/assets/js/frontend/app.js',
         'resources/assets/js/plugin/sweetalert/sweetalert.min.js',
@@ -22,7 +28,11 @@ mix.sass('resources/assets/sass/frontend/app.scss', 'public/css/frontend.css')
     .js([
         'resources/assets/js/backend/app.js',
         'resources/assets/js/plugin/sweetalert/sweetalert.min.js',
-        'resources/assets/js/plugins.js'
+        'resources/assets/js/plugins.js',
+        'resources/assets/plugin/select2/select2.full.min.js',
+        'resources/assets/plugin/toastr/build/toastr.min.js',
+        'resources/assets/plugin/bootstrap-toggle/js/bootstrap-toggle.js',
+        'resources/assets/plugin/bootstrap-confirmation/bootstrap-confirmation.min.js'
     ], 'public/js/backend.js')
     .webpackConfig({
         plugins: [

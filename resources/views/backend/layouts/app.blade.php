@@ -29,11 +29,9 @@
             {{ Html::style(mix('css/backend.css')) }}
         @endif
 
+        {{ Html::style(mix('css/all.css')) }}
+
         @yield('after-styles')
-        {{ Html::style('plugin/select2/select2.css') }}
-        {{ Html::style('plugin/flag-icon-css/css/flag-icon.min.css') }}
-        {{ Html::style('plugin/toastr/build/toastr.min.css') }}
-        {{ Html::style('plugin/bootstrap-toggle/css/bootstrap-toggle.min.css') }}
 
         <!-- Html5 Shim and Respond.js IE8 support of Html5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -86,10 +84,6 @@
         @yield('before-scripts')
 
         {{ Html::script(mix('js/backend.js')) }}
-        {{ Html::script('plugin/select2/select2.full.min.js') }}
-        {{ Html::script('plugin/toastr/build/toastr.min.js') }}
-        {{ Html::script('plugin/bootstrap-toggle/js/bootstrap-toggle.min.js') }}
-        {{ Html::script('plugin/bootstrap-confirmation/bootstrap-confirmation.min.js') }}
 
         @yield('after-scripts')
 
