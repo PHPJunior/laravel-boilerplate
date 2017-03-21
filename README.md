@@ -1,3 +1,5 @@
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+
 ## Laravel Boilerplate
 
 Base on [rappasoft/laravel-5-boilerplate](https://github.com/rappasoft/laravel-5-boilerplate)
