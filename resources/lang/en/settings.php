@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: nyinyilwin
  * Date: 3/15/17
- * Time: 6:24 PM
+ * Time: 6:24 PM.
  */
 
 return [
@@ -29,14 +29,14 @@ return [
             'rtl'       => 'Right to Left',
             'progress'  => 'Progress',
             'label'     => 'Label',
-            'enabled'   => 'enabled'
+            'enabled'   => 'enabled',
         ],
 
         'attributes' => [
             'name'      => 'Language Name',
             'locale'    => 'Locale',
             'tag'       => 'Tag',
-            'rtl'       => 'Right to Left'
+            'rtl'       => 'Right to Left',
         ],
 
         'alerts' => [
@@ -45,14 +45,14 @@ return [
                 'deleted' => 'The language was successfully deleted.',
                 'updated' => 'The language was successfully updated.',
                 'enabled' => 'The language was successfully enabled.',
-                'updated_key_group' => 'Language Line key or group updated'
+                'updated_key_group' => 'Language Line key or group updated',
             ],
             'translation' => [
                 'created' => 'The translation was successfully created.',
                 'deleted' => 'The translation was successfully deleted.',
                 'updated' => 'The translation was successfully updated.',
-                'enabled' => 'The translation was successfully enabled.'
-            ]
+                'enabled' => 'The translation was successfully enabled.',
+            ],
         ],
         'exceptions' => [
             'language' => [
@@ -61,8 +61,8 @@ return [
                 'delete_error'      => 'There was a problem deleting this language. Please try again.',
                 'not_found'         => 'That language does not exist.',
                 'update_error'      => 'There was a problem updating this language. Please try again.',
-            ]
-        ]
+            ],
+        ],
     ],
 
     'language' => [
@@ -80,12 +80,12 @@ return [
             'name'      => 'Language Line Group Name',
             'count'     => 'Line Count',
             'progress'  => 'Progress',
-            'label'     => 'Label'
+            'label'     => 'Label',
         ],
         'attributes' => [
             'group'      => 'Language Line Group',
             'default_text' => 'Default Text',
-            'key'   => 'Language line Key'
+            'key'   => 'Language line Key',
         ],
 
     ],
@@ -103,8 +103,8 @@ return [
                 'backend_theme' => 'Backend Theme',
                 'backend_layout' => 'Backend Layout',
                 'page_per_row'     => 'Page Per Row',
-                'analytics'     => 'Google Analytics'
-            ]
+                'analytics'     => 'Google Analytics',
+            ],
         ],
 
         'system' => [
@@ -136,7 +136,7 @@ return [
 
                 'no-captcha_secret' => 'No-Captcha Secret',
                 'no-captcha_sitekey' => 'No-Captcha SiteKey',
-            ]
+            ],
         ],
 
         'company' => [
@@ -146,8 +146,8 @@ return [
                 'company_address' => 'Address',
                 'company_phone' => 'Phone',
                 'company_email' => 'Email',
-                'company_website' => 'Website'
-            ]
+                'company_website' => 'Website',
+            ],
         ],
 
         'mail' => [
@@ -165,7 +165,7 @@ return [
                 'services_mailgun_domain' => 'Domain',
                 'services_mailgun_secret' => 'Secret Key',
                 'services_mandrill_secret' => 'Mandrill Secret Key',
-            ]
+            ],
         ],
 
         'alerts' => [
@@ -173,6 +173,6 @@ return [
             'deleted' => 'The setting was successfully deleted.',
             'updated' => 'The setting was successfully updated.',
             'enabled' => 'The setting was successfully enabled.',
-        ]
-    ]
+        ],
+    ],
 ];

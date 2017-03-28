@@ -53,8 +53,8 @@ return [
                 'company'   => 'Company',
                 'system'   => 'System',
                 'mail'   => 'Mail',
-                'translation' => 'Translation'
-            ]
+                'translation' => 'Translation',
+            ],
         ],
     ],
 

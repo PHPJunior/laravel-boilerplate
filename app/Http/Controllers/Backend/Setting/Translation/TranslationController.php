@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Backend\Setting\Translation;
 
-use App\Repositories\Backend\Setting\Language\LanguageRepository;
-use App\Repositories\Backend\Setting\Translation\TranslationRepository;
-use Efriandika\LaravelSettings\Facades\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\TranslationLoader\LanguageLine;
+use Efriandika\LaravelSettings\Facades\Settings;
+use App\Repositories\Backend\Setting\Language\LanguageRepository;
+use App\Repositories\Backend\Setting\Translation\TranslationRepository;
 
 class TranslationController extends Controller
 {
@@ -25,7 +25,7 @@ class TranslationController extends Controller
      * @param TranslationRepository $translation
      * @param LanguageRepository $language
      */
-    public function __construct(TranslationRepository $translation , LanguageRepository $language)
+    public function __construct(TranslationRepository $translation, LanguageRepository $language)
     {
         $this->translation = $translation;
         $this->language = $language;
@@ -60,6 +60,7 @@ class TranslationController extends Controller
     public function store(Request $request)
     {
         $this->translation->create($request->all());
+
         return redirect()->route('admin.setting.translation.index')->withFlashSuccess(trans('settings.translation.alerts.language.created'));
     }
 
@@ -73,7 +74,7 @@ class TranslationController extends Controller
     {
         return view('backend.setting.translation.translate')->with([
             'language_lines' => $line->paginate(Settings::get('page_per_row')),
-            'language_lists' => $this->language->getAll()
+            'language_lists' => $this->language->getAll(),
         ]);
     }
 
@@ -95,9 +96,10 @@ class TranslationController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function update($language , Request $request)
+    public function update($language, Request $request)
     {
-        $this->translation->update($language , $request->except(['_token','_method']));
+        $this->translation->update($language, $request->except(['_token', '_method']));
+
         return redirect()->back()->withFlashSuccess(trans('settings.translation.alerts.language.updated'));
     }
 
@@ -110,12 +112,14 @@ class TranslationController extends Controller
     public function destroy(LanguageLine $line)
     {
         $this->translation->delete($line);
+
         return redirect()->back()->withFlashSuccess(trans('settings.translation.alerts.language.deleted'));
     }
 
     public function deleteLanguageGroup($group)
     {
         $group->delete();
+
         return redirect()->route('admin.setting.translation.index')->withFlashSuccess(trans('settings.translation.alerts.language.deleted'));
     }
 }

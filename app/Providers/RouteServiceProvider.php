@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Models\Access\User\User;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Spatie\TranslationLoader\LanguageLine;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 /**
  * Class RouteServiceProvider.
@@ -43,7 +43,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->bind('languageLine', function ($value) {
-            return LanguageLine::where('group' , $value);
+            return LanguageLine::where('group', $value);
         });
 
         $this->bind('translation', function ($value) {

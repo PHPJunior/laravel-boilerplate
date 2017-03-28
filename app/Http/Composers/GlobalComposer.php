@@ -2,8 +2,8 @@
 
 namespace App\Http\Composers;
 
-use App\Models\Setting\Language\Language;
 use Illuminate\View\View;
+use App\Models\Setting\Language\Language;
 
 /**
  * Class GlobalComposer.
@@ -21,7 +21,7 @@ class GlobalComposer
      */
     public function __construct(Language $language)
     {
-        $this->language = $language->where('enabled' , 1)->get();
+        $this->language = $language->where('enabled', 1)->get();
     }
 
     /**
@@ -34,6 +34,6 @@ class GlobalComposer
     public function compose(View $view)
     {
         $view->with('logged_in_user', access()->user());
-        $view->with('languages' , $this->language );
+        $view->with('languages', $this->language);
     }
 }

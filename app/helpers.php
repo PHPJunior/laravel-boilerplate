@@ -95,45 +95,44 @@ if (! function_exists('getRtlCss')) {
     }
 }
 
-if (! function_exists('getLanguageLinePercentage')){
-
-    function getLanguageLinePercentage( $group ){
+if (! function_exists('getLanguageLinePercentage')) {
+    function getLanguageLinePercentage($group)
+    {
         $count = 0;
 
-        $language_line = \Spatie\TranslationLoader\LanguageLine::where('group' , $group )->get();
+        $language_line = \Spatie\TranslationLoader\LanguageLine::where('group', $group)->get();
 
         $language = \App\Models\Setting\Language\Language::pluck('locale_code');
 
-        foreach ($language as $key => $value){
-            foreach ($language_line as $line){
-                if(array_has( $line->text , $value ) && $line->text[$value]){
-                    $count += 1 ;
+        foreach ($language as $key => $value) {
+            foreach ($language_line as $line) {
+                if (array_has($line->text, $value) && $line->text[$value]) {
+                    $count += 1;
                 }
             }
         }
 
-        $total_language_line = count( $language ) * count($language_line) ;
+        $total_language_line = count($language) * count($language_line);
 
 //        return $count.' / '.$total_language_line;
 
-        return intval(( 100 * $count ) / $total_language_line );
+        return intval((100 * $count) / $total_language_line);
     }
-
 }
 
-if (! function_exists('getLanguagePercentage')){
-    function getLanguagePercentage($language){
-        $count = 0 ;
+if (! function_exists('getLanguagePercentage')) {
+    function getLanguagePercentage($language)
+    {
+        $count = 0;
 
         $language_line = \Spatie\TranslationLoader\LanguageLine::all();
 
-        foreach ($language_line as $line){
-            if(array_has( $line->text , $language ) && $line->text[$language]){
-                $count += 1 ;
+        foreach ($language_line as $line) {
+            if (array_has($line->text, $language) && $line->text[$language]) {
+                $count += 1;
             }
         }
 
-        return  intval(( 100 * $count ) / count($language_line)) ;
-
+        return  intval((100 * $count) / count($language_line));
     }
 }
