@@ -25,7 +25,7 @@ class StoreLanguageRequest extends FormRequest
     {
         return [
             'language_name'     => 'required',
-            'locale_code' => 'required'
+            'locale_code' => 'required',
         ];
     }
 }

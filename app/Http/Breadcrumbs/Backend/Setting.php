@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: user
  * Date: 3/17/2017
- * Time: 10:10 AM
+ * Time: 10:10 AM.
  */
-
 Breadcrumbs::register('admin.setting.config.general', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.dashboard');
     $breadcrumbs->push(trans('settings.configuration.general.title'), route('admin.setting.config.general'));

@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Setting\Language\Language;
 use Closure;
 use Carbon\Carbon;
+use App\Models\Setting\Language\Language;
 
 /**
  * Class LocaleMiddleware.
@@ -22,7 +22,7 @@ class LocaleMiddleware
      */
     public function __construct(Language $language)
     {
-        $this->language = $language->where('locale_code' , session()->get('locale'))->first();
+        $this->language = $language->where('locale_code', session()->get('locale'))->first();
     }
 
     /**
@@ -39,7 +39,7 @@ class LocaleMiddleware
          * Locale is enabled and allowed to be changed
          */
         if (config('locale.status')) {
-            if (session()->has('locale') && ( count($this->language) > 0 ) ) {
+            if (session()->has('locale') && (count($this->language) > 0)) {
 
                 /*
                  * Set the Laravel locale
@@ -49,7 +49,7 @@ class LocaleMiddleware
                 /*
                  * setLocale for php. Enables ->formatLocalized() with localized values for dates
                  */
-                setlocale(LC_TIME, $this->language->php_locale_code );
+                setlocale(LC_TIME, $this->language->php_locale_code);
 
                 /*
                  * setLocale to use Carbon source locales. Enables diffForHumans() localized

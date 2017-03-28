@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Backend\Setting\Language;
 
-use App\Http\Requests\Backend\Setting\Language\ManageLanguageRequest;
-use App\Http\Requests\Backend\Setting\Language\StoreLanguageRequest;
-use App\Http\Requests\Backend\Setting\Language\UpdateLanguageRequest;
-use App\Models\Setting\Language\Language;
-use App\Repositories\Backend\Setting\Language\LanguageRepository;
-use Efriandika\LaravelSettings\Facades\Settings;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Setting\Language\Language;
+use Efriandika\LaravelSettings\Facades\Settings;
+use App\Repositories\Backend\Setting\Language\LanguageRepository;
+use App\Http\Requests\Backend\Setting\Language\StoreLanguageRequest;
+use App\Http\Requests\Backend\Setting\Language\ManageLanguageRequest;
+use App\Http\Requests\Backend\Setting\Language\UpdateLanguageRequest;
 
 class LanguageController extends Controller
 {
@@ -58,6 +57,7 @@ class LanguageController extends Controller
     public function store(StoreLanguageRequest $request)
     {
         $this->language->create($request->all());
+
         return redirect()->back()->withFlashSuccess(trans('settings.translation.alerts.translation.created'));
     }
 
@@ -68,7 +68,7 @@ class LanguageController extends Controller
      * @param ManageLanguageRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(Language $language , ManageLanguageRequest $request)
+    public function edit(Language $language, ManageLanguageRequest $request)
     {
         return view('backend.setting.language.edit')->withLanguage($language);
     }
@@ -80,9 +80,9 @@ class LanguageController extends Controller
      * @param UpdateLanguageRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Language $language , UpdateLanguageRequest $request)
+    public function update(Language $language, UpdateLanguageRequest $request)
     {
-        $this->language->update( $language , $request->all() );
+        $this->language->update($language, $request->all());
 
         return redirect()->route('admin.setting.language.index')->withFlashSuccess(trans('settings.translation.alerts.language.updated'));
     }
@@ -94,17 +94,17 @@ class LanguageController extends Controller
      * @param ManageLanguageRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Language $language , ManageLanguageRequest $request)
+    public function destroy(Language $language, ManageLanguageRequest $request)
     {
         $this->language->delete($language);
 
         return redirect()->route('admin.setting.language.index')->withFlashSuccess(trans('settings.translation.alerts.language.deleted'));
     }
 
-    public function enable(Language $language , ManageLanguageRequest $request)
+    public function enable(Language $language, ManageLanguageRequest $request)
     {
         $language->update([
-            'enabled' => ($language->enabled) ? false : true
+            'enabled' => ($language->enabled) ? false : true,
         ]);
 
         return redirect()->route('admin.setting.language.index')->withFlashSuccess(trans('settings.translation.alerts.language.enabled'));

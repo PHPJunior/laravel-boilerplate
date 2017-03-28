@@ -44,7 +44,7 @@ return [
             'update' => 'Update',
             'view'   => 'View',
             'enable' => 'Enable',
-            'disable'=> 'Disable'
+            'disable'=> 'Disable',
         ],
 
         'save' => 'Save',

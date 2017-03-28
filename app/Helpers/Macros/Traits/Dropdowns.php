@@ -1318,7 +1318,7 @@ trait Dropdowns
             'smtp'      => 'smtp',
             'mailgun'   => 'mailgun',
             'mandrill'  => 'mandrill',
-            'log'       => 'log'
+            'log'       => 'log',
         ];
 
         return $this->select($name, $list, $selected, $options);
@@ -1334,7 +1334,7 @@ trait Dropdowns
     {
         $list = [
             'ssl'  => 'SSL',
-            'tls'  => 'TLS'
+            'tls'  => 'TLS',
         ];
 
         return $this->select($name, $list, $selected, $options);
@@ -1354,7 +1354,7 @@ trait Dropdowns
             'red' => 'Red',
             'red-light' => 'Red-Light',
             'yellow' => 'Yellow',
-            'yellow-light' => 'Yellow-Light'
+            'yellow-light' => 'Yellow-Light',
         ];
 
         return $this->select($name, $list, $selected, $options);
@@ -1367,7 +1367,7 @@ trait Dropdowns
             'sidebar-mini'  => 'Sidebar-Mini',
             'sidebar-collapse'  => 'Sidebar-Collapse',
             'layout-boxed'  => 'Layout-Boxed',
-            'layout-top-nav'  => 'Layout-Top-Nav'
+            'layout-top-nav'  => 'Layout-Top-Nav',
         ];
 
         return $this->select($name, $list, $selected, $options);
@@ -1383,10 +1383,10 @@ trait Dropdowns
     {
         $list = [];
 
-        $languages = Language::where('enabled' , 1)->get();
+        $languages = Language::where('enabled', 1)->get();
 
-        foreach ($languages as $language){
-            $list[$language->locale_code] = $language->language_name ;
+        foreach ($languages as $language) {
+            $list[$language->locale_code] = $language->language_name;
         }
 
         return $this->select($name, $list, $selected, $options);
@@ -1404,8 +1404,8 @@ trait Dropdowns
 
         $languages = LanguageLine::all();
 
-        foreach ($languages as $language){
-            $list[$language->group] = ucfirst($language->group) ;
+        foreach ($languages as $language) {
+            $list[$language->group] = ucfirst($language->group);
         }
 
         return $this->select($name, $list, $selected, $options);
@@ -1423,7 +1423,7 @@ trait Dropdowns
             'null'     => 'Null',
             'pusher'   => 'Pusher',
             'redis'    => 'Redis',
-            'log'      => 'log'
+            'log'      => 'log',
         ];
 
         return $this->select($name, $list, $selected, $options);
@@ -1443,7 +1443,7 @@ trait Dropdowns
             'redis'     => 'Redis',
             'database'  => 'Database',
             'file'      => 'File',
-            'memcached' => 'Memcached'
+            'memcached' => 'Memcached',
         ];
 
         return $this->select($name, $list, $selected, $options);

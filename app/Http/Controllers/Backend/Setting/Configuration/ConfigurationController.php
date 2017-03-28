@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Backend\Setting\Configuration;
 
-use Efriandika\LaravelSettings\Facades\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Efriandika\LaravelSettings\Facades\Settings;
 
 /**
- * Class ConfigurationController
- * @package App\Http\Controllers\Backend\Setting\Configuration
+ * Class ConfigurationController.
  */
 class ConfigurationController extends Controller
 {
@@ -47,12 +46,12 @@ class ConfigurationController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->has('app_locale')){
+        if ($request->has('app_locale')) {
             session()->put('locale', $request->input('app_locale'));
         }
 
-        foreach ($request->except(['_token']) as $key => $value){
-            Settings::set($key , $value);
+        foreach ($request->except(['_token']) as $key => $value) {
+            Settings::set($key, $value);
         }
 
         return redirect()->back()->withFlashSuccess(trans('settings.configuration.alerts.updated'));

@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: nyinyilwin
  * Date: 3/15/17
- * Time: 7:31 PM
+ * Time: 7:31 PM.
  */
 
 namespace App\Models\Setting\Language\Traits\Attribute;
-
 
 trait LanguageAttribute
 {
@@ -24,7 +23,6 @@ trait LanguageAttribute
      */
     public function getDeleteButtonAttribute()
     {
-
         if ($this->locale_code != 'en') {
             return '<a href="'.route('admin.setting.language.destroy', $this).'"
                 data-method="delete"
@@ -42,7 +40,7 @@ trait LanguageAttribute
      */
     public function getEnableButtonAttribute()
     {
-        return $this->enabled ? '<a href="' . route('admin.setting.language.enable', $this) . '" class="btn btn-xs btn-warning" data-toggle="confirmation" data-title="'.trans('strings.backend.general.are_you_sure').'"><i class="fa fa-lock" data-toggle="tooltip" data-placement="top" title="' . trans('buttons.general.crud.disable') . '"></i></a> ' : '<a href="' . route('admin.setting.language.enable', $this) . '" class="btn btn-xs btn-info" data-toggle="confirmation" data-title="'.trans('strings.backend.general.are_you_sure').'"><i class="fa fa-unlock" data-toggle="tooltip" data-placement="top" title="' . trans('buttons.general.crud.enable') . '"></i></a> ';
+        return $this->enabled ? '<a href="'.route('admin.setting.language.enable', $this).'" class="btn btn-xs btn-warning" data-toggle="confirmation" data-title="'.trans('strings.backend.general.are_you_sure').'"><i class="fa fa-lock" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.general.crud.disable').'"></i></a> ' : '<a href="'.route('admin.setting.language.enable', $this).'" class="btn btn-xs btn-info" data-toggle="confirmation" data-title="'.trans('strings.backend.general.are_you_sure').'"><i class="fa fa-unlock" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.general.crud.enable').'"></i></a> ';
     }
 
     /**
